@@ -1,0 +1,42 @@
+==21344== Memcheck, a memory error detector
+==21344== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
+==21344== Using Valgrind-3.6.0.SVN-Debian and LibVEX; rerun with -h for copyright info
+==21344== Command: ./cs153drv
+==21344== 
+[==========] Running 11 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 11 tests from MaxHeapTest
+[ RUN      ] MaxHeapTest.DefaultConstructor
+[       OK ] MaxHeapTest.DefaultConstructor
+[ RUN      ] MaxHeapTest.SingleInsert
+[       OK ] MaxHeapTest.SingleInsert
+[ RUN      ] MaxHeapTest.Insert2NoSwap
+[       OK ] MaxHeapTest.Insert2NoSwap
+[ RUN      ] MaxHeapTest.Insert2Swap
+[       OK ] MaxHeapTest.Insert2Swap
+[ RUN      ] MaxHeapTest.Insert3NoSwap
+[       OK ] MaxHeapTest.Insert3NoSwap
+[ RUN      ] MaxHeapTest.Insert3Swap
+[       OK ] MaxHeapTest.Insert3Swap
+[ RUN      ] MaxHeapTest.Insert4NoSwap
+[       OK ] MaxHeapTest.Insert4NoSwap
+[ RUN      ] MaxHeapTest.Insert4Swap
+[       OK ] MaxHeapTest.Insert4Swap
+[ RUN      ] MaxHeapTest.InsertMultiNoSwap
+[       OK ] MaxHeapTest.InsertMultiNoSwap
+[ RUN      ] MaxHeapTest.InsertMultiSwap
+[       OK ] MaxHeapTest.InsertMultiSwap
+[ RUN      ] MaxHeapTest.InsertManySomeSwapSomeNot
+[       OK ] MaxHeapTest.InsertManySomeSwapSomeNot
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test case ran.
+[  PASSED  ] 11 tests.
+==21344== 
+==21344== HEAP SUMMARY:
+==21344==     in use at exit: 0 bytes in 0 blocks
+==21344==   total heap usage: 10,530 allocs, 10,530 frees, 367,017 bytes allocated
+==21344== 
+==21344== All heap blocks were freed -- no leaks are possible
+==21344== 
+==21344== For counts of detected and suppressed errors, rerun with: -v
+==21344== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 4 from 4)

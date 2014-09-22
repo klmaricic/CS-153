@@ -1,0 +1,175 @@
+==24815== Memcheck, a memory error detector
+==24815== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
+==24815== Using Valgrind-3.6.0.SVN-Debian and LibVEX; rerun with -h for copyright info
+==24815== Command: ./cs153drv
+==24815== 
+[==========] Running 22 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 22 tests from VectorTest
+[ RUN      ] VectorTest.CorrectDefaultSize
+[       OK ] VectorTest.CorrectDefaultSize
+[ RUN      ] VectorTest.CorrectDefaultMaxSize
+[       OK ] VectorTest.CorrectDefaultMaxSize
+[ RUN      ] VectorTest.PushBackSingle
+[       OK ] VectorTest.PushBackSingle
+[ RUN      ] VectorTest.PushBackMulti
+==24815== Invalid read of size 4
+==24815==    at 0x407014: Vector<int>::push_back(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x4026BF: VectorTest_PushBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x401F12: main (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==  Address 0x5dc5958 is 0 bytes after a block of size 8 alloc'd
+==24815==    at 0x4C27939: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==24815==    by 0x406F83: Vector<int>::push_back(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x4026BF: VectorTest_PushBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x401F12: main (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815== 
+==24815== Conditional jump or move depends on uninitialised value(s)
+==24815==    at 0x407C04: testing::AssertionResult testing::internal::CmpHelperEQ<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40725B: testing::AssertionResult testing::internal::EqHelper<false>::Compare<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x4026F8: VectorTest_PushBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x401F12: main (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815== 
+==24815== Conditional jump or move depends on uninitialised value(s)
+==24815==    at 0x530CCB6: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x530CF45: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x531FF1D: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x4083FA: void GTestStreamToHelper<int>(std::ostream*, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408366: testing::Message& testing::Message::operator<< <int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408227: testing::internal::String testing::internal::StreamableToString<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40813E: testing::internal::String testing::internal::FormatForFailureMessage<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40803E: testing::internal::String testing::internal::FormatForComparisonFailureMessage<int, int>(int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x407C2F: testing::AssertionResult testing::internal::CmpHelperEQ<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40725B: testing::AssertionResult testing::internal::EqHelper<false>::Compare<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x4026F8: VectorTest_PushBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815== 
+==24815== Use of uninitialised value of size 8
+==24815==    at 0x5307513: ??? (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x530CCE2: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x530CF45: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x531FF1D: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x4083FA: void GTestStreamToHelper<int>(std::ostream*, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408366: testing::Message& testing::Message::operator<< <int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408227: testing::internal::String testing::internal::StreamableToString<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40813E: testing::internal::String testing::internal::FormatForFailureMessage<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40803E: testing::internal::String testing::internal::FormatForComparisonFailureMessage<int, int>(int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x407C2F: testing::AssertionResult testing::internal::CmpHelperEQ<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40725B: testing::AssertionResult testing::internal::EqHelper<false>::Compare<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x4026F8: VectorTest_PushBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815== 
+==24815== Conditional jump or move depends on uninitialised value(s)
+==24815==    at 0x530751E: ??? (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x530CCE2: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x530CF45: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x531FF1D: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x4083FA: void GTestStreamToHelper<int>(std::ostream*, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408366: testing::Message& testing::Message::operator<< <int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408227: testing::internal::String testing::internal::StreamableToString<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40813E: testing::internal::String testing::internal::FormatForFailureMessage<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40803E: testing::internal::String testing::internal::FormatForComparisonFailureMessage<int, int>(int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x407C2F: testing::AssertionResult testing::internal::CmpHelperEQ<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40725B: testing::AssertionResult testing::internal::EqHelper<false>::Compare<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x4026F8: VectorTest_PushBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815== 
+==24815== Conditional jump or move depends on uninitialised value(s)
+==24815==    at 0x530CD18: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x530CF45: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x531FF1D: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/libstdc++.so.6.0.13)
+==24815==    by 0x4083FA: void GTestStreamToHelper<int>(std::ostream*, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408366: testing::Message& testing::Message::operator<< <int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x408227: testing::internal::String testing::internal::StreamableToString<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40813E: testing::internal::String testing::internal::FormatForFailureMessage<int>(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40803E: testing::internal::String testing::internal::FormatForComparisonFailureMessage<int, int>(int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x407C2F: testing::AssertionResult testing::internal::CmpHelperEQ<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x40725B: testing::AssertionResult testing::internal::EqHelper<false>::Compare<int, int>(char const*, char const*, int const&, int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x4026F8: VectorTest_PushBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815== 
+test_vector.cpp:41: Failure
+Value of: a[i]
+  Actual: 0
+Expected: i
+Which is: 1
+[  FAILED  ] VectorTest.PushBackMulti
+[ RUN      ] VectorTest.BracketReadNegativeIndex
+[       OK ] VectorTest.BracketReadNegativeIndex
+[ RUN      ] VectorTest.BracketReadIndexLargerThanSize
+[       OK ] VectorTest.BracketReadIndexLargerThanSize
+[ RUN      ] VectorTest.BracketReadIndexIsSize
+[       OK ] VectorTest.BracketReadIndexIsSize
+[ RUN      ] VectorTest.BracketWriteNegativeIndex
+[       OK ] VectorTest.BracketWriteNegativeIndex
+[ RUN      ] VectorTest.BracketWriteIndexLargerThanSize
+[       OK ] VectorTest.BracketWriteIndexLargerThanSize
+[ RUN      ] VectorTest.BracketWriteIndexIsSize
+[       OK ] VectorTest.BracketWriteIndexIsSize
+[ RUN      ] VectorTest.PopBackSingle
+test_vector.cpp:91: Failure
+Value of: a.max_size()
+  Actual: 1
+Expected: 0
+[  FAILED  ] VectorTest.PopBackSingle
+[ RUN      ] VectorTest.PopBackMulti
+==24815== Invalid read of size 4
+==24815==    at 0x407014: Vector<int>::push_back(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x403838: VectorTest_PopBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x401F12: main (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==  Address 0x5dcdf08 is 0 bytes after a block of size 8 alloc'd
+==24815==    at 0x4C27939: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==24815==    by 0x406F83: Vector<int>::push_back(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x403838: VectorTest_PopBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x401F12: main (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815== 
+==24815== Warning: set address range perms: large range [0x39187040, 0x59187040) (undefined)
+==24815== 
+==24815== Process terminating with default action of signal 11 (SIGSEGV)
+==24815==  Access not within mapped region at address 0x261B7000
+==24815==    at 0x407014: Vector<int>::push_back(int const&) (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x403838: VectorTest_PopBackMulti_Test::TestBody() (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==24815==    by 0x401F12: main (in /mnt/dfs/klmhw9/Users/klmhw9/CS153/assgn1/temp/cs153drv)
+==24815==  If you believe this happened as a result of a stack
+==24815==  overflow in your program's main thread (unlikely but
+==24815==  possible), you can try to increase the size of the
+==24815==  main thread stack using the --main-stacksize= flag.
+==24815==  The main thread stack size used in this run was 16777216.
+==24815== 
+==24815== HEAP SUMMARY:
+==24815==     in use at exit: 805,312,241 bytes in 214 blocks
+==24815==   total heap usage: 788 allocs, 574 frees, 1,073,809,504 bytes allocated
+==24815== 
+==24815== LEAK SUMMARY:
+==24815==    definitely lost: 0 bytes in 0 blocks
+==24815==    indirectly lost: 0 bytes in 0 blocks
+==24815==      possibly lost: 0 bytes in 0 blocks
+==24815==    still reachable: 805,312,241 bytes in 214 blocks
+==24815==         suppressed: 0 bytes in 0 blocks
+==24815== Rerun with --leak-check=full to see details of leaked memory
+==24815== 
+==24815== For counts of detected and suppressed errors, rerun with: -v
+==24815== Use --track-origins=yes to see where uninitialised values come from
+==24815== ERROR SUMMARY: 793830 errors from 7 contexts (suppressed: 4 from 4)
+Segmentation fault

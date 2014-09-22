@@ -1,0 +1,10 @@
+Grade summary:
+---
+17 / 17 tests passed: 80  / 80
+0 / 8 extra credit tests passed: 0  / 20
+---
+Bytes lost overall: 0
+Memory errors: 0
+Memory Management: 20 / 20
+---
+Base Total: 100 / 100

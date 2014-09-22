@@ -1,0 +1,37 @@
+//Kelsey Maricic
+//3/4/12
+//stack.h 
+//Definition of a class for a stack
+
+#ifndef STACK_H
+#define STACK_H
+
+#include <stdexcept>
+#include "linkedList.h"
+
+template <class T>
+class Stack : protected LinkedList<T>
+{
+  public:
+    Stack() {}
+    Stack(const Stack<T>& cpy);
+    ~Stack() {}
+    unsigned int size();
+    void clear();
+    bool isEmpty();
+    const T& top();
+    void push(const T& x);
+    void pop();
+    Stack<T>& operator=(const Stack<T>& rhs);
+    bool operator==(const Stack<T>& rhs) const;
+};
+
+#include "Stack.hpp"
+
+#endif
+  
+    
+    
+
+
+

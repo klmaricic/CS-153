@@ -1,0 +1,133 @@
+==23307== Memcheck, a memory error detector
+==23307== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
+==23307== Using Valgrind-3.6.0.SVN-Debian and LibVEX; rerun with -h for copyright info
+==23307== Command: ./cs153drv
+==23307== 
+[==========] Running 30 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 30 tests from DIGRAPHTest
+[ RUN      ] DIGRAPHTest.DefaultConstructor
+[       OK ] DIGRAPHTest.DefaultConstructor
+[ RUN      ] DIGRAPHTest.ClearWhenEmpty
+[       OK ] DIGRAPHTest.ClearWhenEmpty
+[ RUN      ] DIGRAPHTest.TwoVerticesNoEdges
+[       OK ] DIGRAPHTest.TwoVerticesNoEdges
+[ RUN      ] DIGRAPHTest.TwoVerticesOneUnweightedEdge
+[       OK ] DIGRAPHTest.TwoVerticesOneUnweightedEdge
+[ RUN      ] DIGRAPHTest.TwoVerticesOneWeightedEdge
+[       OK ] DIGRAPHTest.TwoVerticesOneWeightedEdge
+[ RUN      ] DIGRAPHTest.ManyVerticesWeightedEdges
+[       OK ] DIGRAPHTest.ManyVerticesWeightedEdges
+[ RUN      ] DIGRAPHTest.RemoveEdgesWhenManyVerticesWeightedEdges
+[       OK ] DIGRAPHTest.RemoveEdgesWhenManyVerticesWeightedEdges
+[ RUN      ] DIGRAPHTest.ClearWhenManyVertices
+[       OK ] DIGRAPHTest.ClearWhenManyVertices
+[ RUN      ] DIGRAPHTest.ReferenceEdgeOutOfRange
+[       OK ] DIGRAPHTest.ReferenceEdgeOutOfRange
+[ RUN      ] DIGRAPHTest.IsSimpleWhenEmpty
+[       OK ] DIGRAPHTest.IsSimpleWhenEmpty
+[ RUN      ] DIGRAPHTest.IsSimpleWhenNonEmpty
+[       OK ] DIGRAPHTest.IsSimpleWhenNonEmpty
+[ RUN      ] DIGRAPHTest.IsSimpleWhenLoop
+[       OK ] DIGRAPHTest.IsSimpleWhenLoop
+[ RUN      ] DIGRAPHTest.IsSimpleWhenParallelEdges
+[       OK ] DIGRAPHTest.IsSimpleWhenParallelEdges
+[ RUN      ] DIGRAPHTest.IsCompleteWhenEmpty
+[       OK ] DIGRAPHTest.IsCompleteWhenEmpty
+[ RUN      ] DIGRAPHTest.IsCompleteWhenNonEmptyMissingEdges
+[       OK ] DIGRAPHTest.IsCompleteWhenNonEmptyMissingEdges
+[ RUN      ] DIGRAPHTest.IsCompleteWhenNonEmptyNoMissingEdges
+[       OK ] DIGRAPHTest.IsCompleteWhenNonEmptyNoMissingEdges
+[ RUN      ] DIGRAPHTest.IsCompleteWhenLoop
+[       OK ] DIGRAPHTest.IsCompleteWhenLoop
+[ RUN      ] DIGRAPHTest.IsCompleteWhenParallelEdges
+[       OK ] DIGRAPHTest.IsCompleteWhenParallelEdges
+[ RUN      ] DIGRAPHTest.VertexDegreeWhenNoEdges
+[       OK ] DIGRAPHTest.VertexDegreeWhenNoEdges
+[ RUN      ] DIGRAPHTest.VertexDegreeWhenEdges
+[       OK ] DIGRAPHTest.VertexDegreeWhenEdges
+[ RUN      ] DIGRAPHTest.BFSWhenEmpty
+[       OK ] DIGRAPHTest.BFSWhenEmpty
+[ RUN      ] DIGRAPHTest.BFSWhenSingleVertexNoEdges
+[       OK ] DIGRAPHTest.BFSWhenSingleVertexNoEdges
+[ RUN      ] DIGRAPHTest.BFSWhenSingleVertexOneEdge
+[       OK ] DIGRAPHTest.BFSWhenSingleVertexOneEdge
+[ RUN      ] DIGRAPHTest.BFSWhenNotEmptySomeEdgesStartingFrom0
+test_digraph.cpp:257: Failure
+Value of: visited[1]
+  Actual: -1
+Expected: 1
+[  FAILED  ] DIGRAPHTest.BFSWhenNotEmptySomeEdgesStartingFrom0
+[ RUN      ] DIGRAPHTest.BFSWhenNotEmptySomeEdgesNotStartingFrom0
+test_digraph.cpp:269: Failure
+Value of: visited[0]
+  Actual: 3
+Expected: -1
+[  FAILED  ] DIGRAPHTest.BFSWhenNotEmptySomeEdgesNotStartingFrom0
+[ RUN      ] DIGRAPHTest.DFSWhenEmpty
+[       OK ] DIGRAPHTest.DFSWhenEmpty
+[ RUN      ] DIGRAPHTest.DFSWhenSingleVertexNoEdges
+test_digraph.cpp:287: Failure
+Value of: visited[0]
+  Actual: 1
+Expected: 0
+[  FAILED  ] DIGRAPHTest.DFSWhenSingleVertexNoEdges
+[ RUN      ] DIGRAPHTest.DFSWhenSingleVertexOneEdge
+test_digraph.cpp:296: Failure
+Value of: visited[0]
+  Actual: 1
+Expected: 0
+[  FAILED  ] DIGRAPHTest.DFSWhenSingleVertexOneEdge
+[ RUN      ] DIGRAPHTest.DFSWhenNotEmptySomeEdgesStartingFrom0
+==23307== Conditional jump or move depends on uninitialised value(s)
+==23307==    at 0x410426: DirectedGraph<int, 5u>::dfs(unsigned int, int*) const (in /nethome/users/klmhw9/CS153/assgn6/cs153drv)
+==23307==    by 0x409F89: DIGRAPHTest_DFSWhenNotEmptySomeEdgesStartingFrom0_Test::TestBody() (in /nethome/users/klmhw9/CS153/assgn6/cs153drv)
+==23307==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x402082: main (in /nethome/users/klmhw9/CS153/assgn6/cs153drv)
+==23307== 
+test_digraph.cpp:308: Failure
+Value of: visited[i]
+  Actual: 1
+Expected: i
+Which is: 0
+[  FAILED  ] DIGRAPHTest.DFSWhenNotEmptySomeEdgesStartingFrom0
+[ RUN      ] DIGRAPHTest.DFSWhenNotEmptySomeEdgesNotStartingFrom0
+==23307== Conditional jump or move depends on uninitialised value(s)
+==23307==    at 0x410426: DirectedGraph<int, 5u>::dfs(unsigned int, int*) const (in /nethome/users/klmhw9/CS153/assgn6/cs153drv)
+==23307==    by 0x40A310: DIGRAPHTest_DFSWhenNotEmptySomeEdgesNotStartingFrom0_Test::TestBody() (in /nethome/users/klmhw9/CS153/assgn6/cs153drv)
+==23307==    by 0x5063929: testing::Test::Run() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x5063A27: testing::internal::TestInfoImpl::Run() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x5063ADA: testing::TestCase::Run() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x5067CFC: testing::internal::UnitTestImpl::RunAllTests() (in /usr/lib/libgtest.so.0.0.0)
+==23307==    by 0x402082: main (in /nethome/users/klmhw9/CS153/assgn6/cs153drv)
+==23307== 
+test_digraph.cpp:320: Failure
+Value of: visited[1]
+  Actual: 1
+Expected: 0
+[  FAILED  ] DIGRAPHTest.DFSWhenNotEmptySomeEdgesNotStartingFrom0
+[----------] Global test environment tear-down
+[==========] 30 tests from 1 test case ran.
+[  PASSED  ] 24 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] DIGRAPHTest.BFSWhenNotEmptySomeEdgesStartingFrom0
+[  FAILED  ] DIGRAPHTest.BFSWhenNotEmptySomeEdgesNotStartingFrom0
+[  FAILED  ] DIGRAPHTest.DFSWhenSingleVertexNoEdges
+[  FAILED  ] DIGRAPHTest.DFSWhenSingleVertexOneEdge
+[  FAILED  ] DIGRAPHTest.DFSWhenNotEmptySomeEdgesStartingFrom0
+[  FAILED  ] DIGRAPHTest.DFSWhenNotEmptySomeEdgesNotStartingFrom0
+
+ 6 FAILED TESTS
+==23307== 
+==23307== HEAP SUMMARY:
+==23307==     in use at exit: 0 bytes in 0 blocks
+==23307==   total heap usage: 2,189 allocs, 2,189 frees, 148,234 bytes allocated
+==23307== 
+==23307== All heap blocks were freed -- no leaks are possible
+==23307== 
+==23307== For counts of detected and suppressed errors, rerun with: -v
+==23307== Use --track-origins=yes to see where uninitialised values come from
+==23307== ERROR SUMMARY: 3 errors from 2 contexts (suppressed: 4 from 4)

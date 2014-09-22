@@ -1,0 +1,71 @@
+[==========] Running 32 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 16 tests from GraderStackTest
+[ RUN      ] GraderStackTest.DefaultConstructor
+[       OK ] GraderStackTest.DefaultConstructor
+[ RUN      ] GraderStackTest.PushPushesToTopSingle
+[       OK ] GraderStackTest.PushPushesToTopSingle
+[ RUN      ] GraderStackTest.PushPushesToTopMulti
+[       OK ] GraderStackTest.PushPushesToTopMulti
+[ RUN      ] GraderStackTest.TopThrowsExceptionEmpty
+[       OK ] GraderStackTest.TopThrowsExceptionEmpty
+[ RUN      ] GraderStackTest.PopThrowExceptionEmpty
+[       OK ] GraderStackTest.PopThrowExceptionEmpty
+[ RUN      ] GraderStackTest.PopRemovesOnly
+[       OK ] GraderStackTest.PopRemovesOnly
+[ RUN      ] GraderStackTest.PopRemovesTop
+[       OK ] GraderStackTest.PopRemovesTop
+[ RUN      ] GraderStackTest.ClearWhenEmpty
+[       OK ] GraderStackTest.ClearWhenEmpty
+[ RUN      ] GraderStackTest.ClearWhenNotEmpty
+[       OK ] GraderStackTest.ClearWhenNotEmpty
+[ RUN      ] GraderStackTest.AssignmentToEmpty
+[       OK ] GraderStackTest.AssignmentToEmpty
+[ RUN      ] GraderStackTest.AssignmentToNonEmpty
+[       OK ] GraderStackTest.AssignmentToNonEmpty
+[ RUN      ] GraderStackTest.AssignmentSelf
+[       OK ] GraderStackTest.AssignmentSelf
+[ RUN      ] GraderStackTest.EqualityAreEqual
+[       OK ] GraderStackTest.EqualityAreEqual
+[ RUN      ] GraderStackTest.EqualityAreSame
+[       OK ] GraderStackTest.EqualityAreSame
+[ RUN      ] GraderStackTest.EqualityAreNotTheSame
+[       OK ] GraderStackTest.EqualityAreNotTheSame
+[ RUN      ] GraderStackTest.EqualityEmptyNonEmpty
+[       OK ] GraderStackTest.EqualityEmptyNonEmpty
+[----------] 16 tests from StackTest
+[ RUN      ] StackTest.DefaultConstructor
+[       OK ] StackTest.DefaultConstructor
+[ RUN      ] StackTest.PushPushesToTopSingle
+[       OK ] StackTest.PushPushesToTopSingle
+[ RUN      ] StackTest.PushPushesToTopMulti
+[       OK ] StackTest.PushPushesToTopMulti
+[ RUN      ] StackTest.TopThrowsExceptionEmpty
+[       OK ] StackTest.TopThrowsExceptionEmpty
+[ RUN      ] StackTest.PopThrowExceptionEmpty
+[       OK ] StackTest.PopThrowExceptionEmpty
+[ RUN      ] StackTest.PopRemovesOnly
+[       OK ] StackTest.PopRemovesOnly
+[ RUN      ] StackTest.PopRemovesTop
+[       OK ] StackTest.PopRemovesTop
+[ RUN      ] StackTest.ClearWhenEmpty
+[       OK ] StackTest.ClearWhenEmpty
+[ RUN      ] StackTest.ClearWhenNotEmpty
+[       OK ] StackTest.ClearWhenNotEmpty
+[ RUN      ] StackTest.AssignmentToEmpty
+[       OK ] StackTest.AssignmentToEmpty
+[ RUN      ] StackTest.AssignmentToNonEmpty
+[       OK ] StackTest.AssignmentToNonEmpty
+[ RUN      ] StackTest.AssignmentSelf
+[       OK ] StackTest.AssignmentSelf
+[ RUN      ] StackTest.EqualityAreEqual
+[       OK ] StackTest.EqualityAreEqual
+[ RUN      ] StackTest.EqualityAreSame
+[       OK ] StackTest.EqualityAreSame
+[ RUN      ] StackTest.EqualityAreNotTheSame
+[       OK ] StackTest.EqualityAreNotTheSame
+[ RUN      ] StackTest.EqualityEmptyNonEmpty
+[       OK ] StackTest.EqualityEmptyNonEmpty
+[----------] Global test environment tear-down
+[==========] 32 tests from 2 test cases ran.
+[  PASSED  ] 32 tests.
